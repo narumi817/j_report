@@ -1,0 +1,17 @@
+version: '2'
+services:
+    db:
+      build: ./db/
+      environment:
+        MYSQL_ROOT_PASSWORD: gkFnRjKY
+        MYSQL_DATABASE: j_report
+      ports:
+        - 3306:3306
+    app:
+      build: ./app/
+      ports:
+        - 9000:9000
+      links:
+        - db
+      stdin_open: true
+      tty: true

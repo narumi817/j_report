@@ -1,0 +1,16 @@
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+# List display
+GET     /performance                       controllers.PerformanceInfoController.list()
+
+# input form
+GET     /performance/new                   controllers.PerformanceInfoController.performanceInfoNew()
+POST    /performance                       controllers.PerformanceInfoController.performanceInfoAdd()
+
+# update data
+GET     /performance/edit/:performanceId          controllers.PerformanceInfoController.performanceInfoEdit(performanceId: Int)
+POST    /performance/:performanceId               controllers.PerformanceInfoController.performanceInfoUpdate(performanceId: Int)
+
+# delete data
+POST    /performance/:performanceId/delete        controllers.PerformanceInfoController.performanceInfoDelete(performanceId: Int)

@@ -1,0 +1,26 @@
+@import services._
+@(performanceInfoForm: Form[PerformanceInfo])(implicit request: MessagesRequestHeader)
+
+<html>
+    <head>
+        <title>ジャニーズ　みんなのコンサートレポ</title>
+    </head>
+    <body>
+        <h1>公演 登録</h1>
+
+        @helper.form(action = routes.PerformanceInfoController.performanceInfoAdd()) {
+        @helper.CSRF.formField
+
+        <fieldset>
+
+            @helper.inputText(performanceInfoForm("date"), '_label -> "日程")
+            @helper.inputText(performanceInfoForm("time"), '_label -> "開演時間")
+
+        </fieldset>
+
+        <input type="submit" value="登録">
+
+        }
+
+    </body>
+</html>
