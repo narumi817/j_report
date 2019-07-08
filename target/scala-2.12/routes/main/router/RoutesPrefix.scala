@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/mizukoshinarumi/workspace/scala_workspace/play-hands-on/conf/routes
-// @DATE:Sat Jul 06 17:27:32 JST 2019
+// @SOURCE:/home/j-report/conf/routes
+// @DATE:Mon Jul 08 14:11:23 UTC 2019
 
 
 package router {

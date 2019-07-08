@@ -1,17 +1,20 @@
-version: '2'
+version: '3'
 services:
     db:
+      container_name: j-report-db
       build: ./db/
       environment:
-        MYSQL_ROOT_PASSWORD: gkFnRjKY
         MYSQL_DATABASE: j_report
+        MYSQL_ROOT_PASSWORD: gkFnRjKY
       ports:
         - 3306:3306
     app:
+      container_name: j-report-app
       build: ./app/
+      user: root
       ports:
         - 9000:9000
       links:
         - db
-      stdin_open: true
-      tty: true
+      volumes:
+        - ./:/home/j-report

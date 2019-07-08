@@ -13,7 +13,7 @@ case class PerformanceInfo(id: Option[Int], date: String, time: String)
 @javax.inject.Singleton
 class PerformanceInfoService @Inject() (dbApi: DBApi) {
 
-  private val db = dbApi.database("j_report")
+  private val db = dbApi.database("default")
 
   val simple = {
     get[Option[Int]]("performanceInfo.id") ~
