@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/j-report/conf/routes
-// @DATE:Mon Jul 08 14:11:23 UTC 2019
+// @DATE:Sat Jul 13 08:32:43 UTC 2019
 
 import play.api.mvc.Call
 
@@ -26,46 +26,46 @@ package controllers {
   }
 
   // @LINE:5
-  class ReversePerformanceInfoController(_prefix: => String) {
+  class ReverseArtistController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:9
-    def performanceInfoAdd(): Call = {
+    // @LINE:8
+    def artistNew(): Call = {
       
-      Call("POST", _prefix + { _defaultPrefix } + "performance")
-    }
-  
-    // @LINE:13
-    def performanceInfoUpdate(performanceId:Int): Call = {
-      
-      Call("POST", _prefix + { _defaultPrefix } + "performance/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("performanceId", performanceId)))
-    }
-  
-    // @LINE:16
-    def performanceInfoDelete(performanceId:Int): Call = {
-      
-      Call("POST", _prefix + { _defaultPrefix } + "performance/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("performanceId", performanceId)) + "/delete")
+      Call("GET", _prefix + { _defaultPrefix } + "artists/new")
     }
   
     // @LINE:12
-    def performanceInfoEdit(performanceId:Int): Call = {
+    def artistEdit(artistId:Int): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "performance/edit/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("performanceId", performanceId)))
+      Call("GET", _prefix + { _defaultPrefix } + "artists/edit/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("artistId", artistId)))
     }
   
-    // @LINE:8
-    def performanceInfoNew(): Call = {
+    // @LINE:16
+    def artistDelete(artistId:Int): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "performance/new")
+      Call("POST", _prefix + { _defaultPrefix } + "artists/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("artistId", artistId)) + "/delete")
     }
   
     // @LINE:5
-    def list(): Call = {
+    def artistList(): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "performance")
+      Call("GET", _prefix + { _defaultPrefix } + "artists")
+    }
+  
+    // @LINE:9
+    def artistAdd(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "artists")
+    }
+  
+    // @LINE:13
+    def artistUpdate(artistId:Int): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "artists/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("artistId", artistId)))
     }
   
   }

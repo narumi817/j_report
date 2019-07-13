@@ -1,0 +1,33 @@
+@import services._
+@(items: Seq[Artist])
+
+<html>
+    <head>
+        <title>ジャニーズ みんなのコンサートレポ</title>
+    </head>
+    <body>
+        <section>
+            <h1>Artists</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>グループ名</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @items.map { artist =>
+                        <tr>
+                            <td>@artist.name</td>
+                            <td><a href="@controllers.routes.ArtistController.artistEdit(artist.id.get)">編集</a></td>
+                            <td><a href="">メンバー一覧</a></td>
+                            <td><a href="">ツアー一覧</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <br>
+            <a href="@controllers.routes.ArtistController.artistNew()">登録</a>
+        </section>
+    </body>
+</html>

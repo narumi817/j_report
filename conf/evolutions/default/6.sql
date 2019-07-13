@@ -9,6 +9,7 @@ CREATE TABLE `live` (
   `start_time` time DEFAULT NULL,
   `end_time` time DEFAULT NULL,
   `remarks` text,
+  `delete_flg` boolean DEFAULT false,
   `created_datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_user` int(11) NOT NULL DEFAULT '0',
   `updated_datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -22,4 +23,4 @@ CREATE TABLE `live` (
 
 
 # --- !Downs
-DROP TABLE `live`;
+DROP TABLE IF EXISTS `live`;

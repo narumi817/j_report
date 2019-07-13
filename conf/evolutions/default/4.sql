@@ -10,6 +10,7 @@ CREATE TABLE `stage` (
   `end_datetime` date DEFAULT NULL,
   `stage_type` int(11) NOT NULL DEFAULT '1',
   `remarks` text,
+  `delete_flg` boolean DEFAULT false,
   `created_dateimte` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_user` int(11) NOT NULL DEFAULT '0',
   `updated_datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -19,4 +20,4 @@ CREATE TABLE `stage` (
 
 # --- !Downs
 
-DROP TABLE `stage`
+DROP TABLE IF EXISTS `stage`

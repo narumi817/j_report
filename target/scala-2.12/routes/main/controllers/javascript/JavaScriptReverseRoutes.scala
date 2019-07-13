@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/j-report/conf/routes
-// @DATE:Mon Jul 08 14:11:23 UTC 2019
+// @DATE:Sat Jul 13 08:32:43 UTC 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -31,69 +31,69 @@ package controllers.javascript {
   }
 
   // @LINE:5
-  class ReversePerformanceInfoController(_prefix: => String) {
+  class ReverseArtistController(_prefix: => String) {
 
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:9
-    def performanceInfoAdd: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.PerformanceInfoController.performanceInfoAdd",
+    // @LINE:8
+    def artistNew: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ArtistController.artistNew",
       """
         function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "performance"})
-        }
-      """
-    )
-  
-    // @LINE:13
-    def performanceInfoUpdate: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.PerformanceInfoController.performanceInfoUpdate",
-      """
-        function(performanceId0) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "performance/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("performanceId", performanceId0))})
-        }
-      """
-    )
-  
-    // @LINE:16
-    def performanceInfoDelete: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.PerformanceInfoController.performanceInfoDelete",
-      """
-        function(performanceId0) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "performance/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("performanceId", performanceId0)) + "/delete"})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "artists/new"})
         }
       """
     )
   
     // @LINE:12
-    def performanceInfoEdit: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.PerformanceInfoController.performanceInfoEdit",
+    def artistEdit: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ArtistController.artistEdit",
       """
-        function(performanceId0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "performance/edit/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("performanceId", performanceId0))})
+        function(artistId0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "artists/edit/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("artistId", artistId0))})
         }
       """
     )
   
-    // @LINE:8
-    def performanceInfoNew: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.PerformanceInfoController.performanceInfoNew",
+    // @LINE:16
+    def artistDelete: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ArtistController.artistDelete",
       """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "performance/new"})
+        function(artistId0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "artists/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("artistId", artistId0)) + "/delete"})
         }
       """
     )
   
     // @LINE:5
-    def list: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.PerformanceInfoController.list",
+    def artistList: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ArtistController.artistList",
       """
         function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "performance"})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "artists"})
+        }
+      """
+    )
+  
+    // @LINE:9
+    def artistAdd: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ArtistController.artistAdd",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "artists"})
+        }
+      """
+    )
+  
+    // @LINE:13
+    def artistUpdate: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ArtistController.artistUpdate",
+      """
+        function(artistId0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "artists/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("artistId", artistId0))})
         }
       """
     )

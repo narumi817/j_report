@@ -1,0 +1,26 @@
+@import services._
+@(artistForm: Form[Artist])(implicit request: MessagesRequestHeader)
+
+<html>
+    <head>
+        <title>ジャニーズ　みんなのコンサートレポ</title>
+    </head>
+    <body>
+        <h1>Artist Add</h1>
+
+        @helper.form(action = routes.ArtistController.artistAdd()) {
+        @helper.CSRF.formField
+
+        <fieldset>
+
+            @helper.inputText(artistForm("name"), '_label -> "グループ名")
+            @helper.inputText(artistForm("name_read"), '_label -> "読み方")
+
+        </fieldset>
+
+        <input type="submit" value="登録">
+
+        }
+
+    </body>
+</html>

@@ -25,3 +25,13 @@ run
 clean
 reload
 run
+sbt clean
+exit
+run
+stop
+run
+clean
+reload
+run
+exit
+run

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/j-report/conf/routes
-// @DATE:Mon Jul 08 14:11:23 UTC 2019
+// @DATE:Sat Jul 13 08:32:43 UTC 2019
 
 
 package router {
